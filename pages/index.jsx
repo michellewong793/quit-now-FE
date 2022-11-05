@@ -68,14 +68,14 @@ export default function Home() {
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum, "any");
         const signer = provider.getSigner();
-        const buyMeACoffee = new ethers.Contract(
+        const sendEthContract = new ethers.Contract(
           contractAddress,
           contractABI,
           signer
         );
 
         console.log("buying coffee..")
-        const coffeeTxn = await buyMeACoffee.buyCoffee(
+        const coffeeTxn = await sendEthContract.sendEth(
           name ? name : "anon",
           message ? message : "Enjoy your coffee!",
           { value: ethers.utils.parseEther("0.001") }
