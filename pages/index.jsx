@@ -167,14 +167,14 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buy Albert a Coffee!</title>
+        <title>Just quit my job, looking for any support for where to go next!</title>
         <meta name="description" content="Tipping site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Buy Albert a Coffee!
+          Just got laid off, looking for support!
         </h1>
 
         {currentAccount ? (
@@ -196,13 +196,13 @@ export default function Home() {
               <br />
               <div>
                 <label>
-                  Send Albert a message
+                  Send Elaine a message
                 </label>
                 <br />
 
                 <textarea
                   rows={3}
-                  placeholder="Enjoy your coffee!"
+                  placeholder="Take care!"
                   id="message"
                   onChange={onMessageChange}
                   required
@@ -214,7 +214,7 @@ export default function Home() {
                   type="button"
                   onClick={buyCoffee}
                 >
-                  Send 1 Coffee for 0.001ETH
+                  Send 0.001ETH
                 </button>
               </div>
             </form>
@@ -234,16 +234,6 @@ export default function Home() {
           </div>
         )
       }))}
-
-      <footer className={styles.footer}>
-        <a
-          href="https://alchemy.com/?a=roadtoweb3weektwo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by @thatguyintech for Alchemy's Road to Web3 lesson two!
-        </a>
-      </footer>
     </div>
   )
 }
