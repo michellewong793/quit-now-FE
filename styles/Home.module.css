@@ -8,14 +8,32 @@
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.background {
+  background-image: url("/backgroundConfetti.svg");
+  height:100rem;
+}
+
+.broughtToYouBy {
+  margin-top: 10rem;
+  color: white;
+  font-size:1.5rem;
+}
+.largeContainer {
+  position: absolute;
+  top: 15rem;
+  width: 900px;
+  height:645px;
+  background-color: #FFF3C8;
+  border-radius: 97px;
+  padding: 4rem;
+
+}
 .footer {
   width: 100%;
   height: 100px;
@@ -33,7 +51,6 @@
 }
 
 .title a {
-  color: #0070f3;
   text-decoration: none;
 }
 
@@ -46,12 +63,14 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 128px;
+  color: black;
 }
 
 .title,
 .description {
   text-align: center;
+
 }
 
 .description {
@@ -59,6 +78,65 @@
   font-size: 1.5rem;
 }
 
+.powerBack {
+  font-family: Alata;
+  font-size: 48px;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-weight: light;
+}
+
+.makeMoney {
+  font-family: Alata;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: light;
+  color: #d017cd;
+}
+
+.paragraph { 
+  font-family: Alata;
+  text-align: center;
+
+}
+
+.button {
+  background-color: #d017cd;
+  border-radius: 9px;
+  width: fit-content;
+  padding: 1rem;
+  border: none;
+  color: white;
+  font-family: Alata;
+}
+
+.button:hover{
+  background-color: #C717C4;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width:fit-content;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.tinyHeading {
+  font-size: 14px;
+  font-family: Alata;
+  text-align: center
+}
 .code {
   background: #fafafa;
   border-radius: 5px;

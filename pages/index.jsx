@@ -166,18 +166,26 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.background}>
       <Head>
         <title>Just quit my job, looking for any support for where to go next!</title>
         <meta name="description" content="Tipping site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Layout />
+      <Layout />
+
+      <div className={styles.main}>
+        <p className={styles.broughtToYouBy}>brought to you by proud quitters</p>
+        <div className={styles.largeContainer}>
         <h1 className={styles.title}>
           quit now
         </h1>
+        <h2 className={styles.powerBack}>power back to the people</h2>
+        <h3 className={styles.makeMoney}>make money while quitting your job</h3>
+        <p className={styles.paragraph}> web2 companies make money off your data. <i>ngmi</i>  </p>
+        <p className={styles.paragraph}> we help you make money off your data. <i>wagmi</i> </p>
+
 
         {currentAccount ? (
           <div>
@@ -198,7 +206,7 @@ export default function Home() {
               <br />
               <div>
                 <label>
-                  Send Elaine a message
+                  Send Sunwoo a supportive message
                 </label>
                 <br />
 
@@ -222,9 +230,20 @@ export default function Home() {
             </form>
           </div>
         ) : (
-            <button onClick={connectWallet}> Connect your wallet </button>
+          <div className={styles.flexRow}>
+            <div className={styles.flexColumn}> 
+            <p className={styles.tinyHeading}> help Sunwoo quit </p>
+            <button onClick={connectWallet} className={styles.button}> Connect Wallet </button>
+            </div>
+            
+            <div className={styles.flexColumn}> 
+            <p className={styles.tinyHeading}> ready to earn? </p>
+            <button onClick={connectWallet} className={styles.button}> Spill The Tea </button>
+            </div>
+          </div>
           )}
-      </main>
+      </div>
+      </div>
 
       {currentAccount && (<h1>Memos</h1>)}
 

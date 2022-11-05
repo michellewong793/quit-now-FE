@@ -11,6 +11,8 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link href="https://fonts.googleapis.com/css?family=Baloo Bhai" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css?family=Alata" rel="stylesheet"></link>
+
                     <style
                         dangerouslySetInnerHTML={{
                             __html: `

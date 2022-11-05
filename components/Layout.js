@@ -6,7 +6,7 @@ const linkStyle = {
   marginRight: 15,
   fontFamily: "Baloo Bhai",
   textDecoration: "none",
-  color: "black",
+  color: "white",
 };
 
 const paragraph = {
