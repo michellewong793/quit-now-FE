@@ -6,7 +6,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
 import 'animate.css';
-import 'pushnotifs.js';
+import './pushnotifs.js';
 import * as PushAPI from "@pushprotocol/restapi";
 
 
