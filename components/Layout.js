@@ -45,7 +45,7 @@ const Header = () => (
     <Link href="/about">
       <a style={linkStyle}>About</a>
     </Link>
-    <Link href="/">
+    <Link href="https://tally.so/r/me5rqO">
       <a style={linkStyle}>Earn</a>
     </Link>
   </div>
@@ -62,6 +62,10 @@ const Layout = () => {
 
 const Footer = () => (
   <div style={footer}>
+    <a style={linkStyle} href="https://tally.so/r/me5rqO">
+      {" "}
+      Start Earning{" "}
+    </a>
     <a style={linkStyle} href="https://github.com/bookvacuum/quitnow">
       {" "}
       Smart Contract Repo{" "}
