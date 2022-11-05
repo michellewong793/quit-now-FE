@@ -205,8 +205,8 @@ export default function Home() {
         </h1>
         <h2 className={styles.powerBack}>power back to the people</h2>
         <h3 className={styles.makeMoney}>make money while quitting your job</h3>
-        <p className={styles.paragraph}> web2 companies make money off your data. <i>ngmi</i>  </p>
-        <p className={styles.paragraph}> we help you make money off your data. <i>wagmi</i> </p>
+        <p className={styles.paragraph}> web2 companies make money off your data.  </p>
+        <p className={styles.paragraph}> we help you make money off your data.  </p>
 
 
         {currentAccount ? (
@@ -268,7 +268,6 @@ export default function Home() {
       }))
       }
       </div>
-              
             </form>
           </div>
         ) : (
@@ -283,7 +282,10 @@ export default function Home() {
             
             <div className={styles.flexColumn}> 
             <p className={styles.tinyHeading}> ready to earn? </p>
-            <button onClick={connectWallet} className={styles.button}> Spill The Tea </button>
+
+            <button className={styles.button}>             
+            <a href="https://tally.so/r/me5rqO">Spill the tea</a>
+ </button>
             </div>
           </div>
 

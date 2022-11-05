@@ -29,7 +29,7 @@
   position: absolute;
   top: 15rem;
   width: 900px;
-  height:1200px;
+  height:fit-content;
   background-color: #FFF3C8;
   border-radius: 97px;
   padding: 4rem;
@@ -166,8 +166,6 @@
   width: 100%;
   margin-left:auto;
   margin-right:auto;
-  position: absolute;
-  bottom: 5rem;
   font-size:1.5rem;
 }
 
