@@ -1,3 +1,4 @@
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -28,7 +29,7 @@
   position: absolute;
   top: 15rem;
   width: 900px;
-  height:645px;
+  height:600px;
   background-color: #FFF3C8;
   border-radius: 97px;
   padding: 4rem;
@@ -63,8 +64,29 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 128px;
+  font-size: 98px;
   color: black;
+  animation: pulse infinite; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
 }
 
 .title,
@@ -114,7 +136,7 @@
 }
 
 .button:hover{
-  background-color: #C717C4;
+  background-color: #880886;
 }
 
 .flexRow {

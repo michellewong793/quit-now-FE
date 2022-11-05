@@ -5,6 +5,8 @@ import Layout from "../components/Layout"
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
+import 'animate.css';
+
 
 export default function Home() {
   // Contract Address & ABI
