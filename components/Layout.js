@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const linkStyle = {
   marginRight: 15,
-  fontFamily: "Spartan",
+  fontFamily: "Baloo Bhai",
   textDecoration: "none",
   color: "black",
 };
 
 const paragraph = {
-  fontFamily: "Spartan",
+  fontFamily: "Baloo Bhai",
   textDecoration: "none",
   color: "black",
 };
@@ -26,15 +26,11 @@ const header = {
 };
 
 const footer = {
-  position: "fixed",
-  marginBottom: "3rem",
-  bottom: 0,
-  width: "100%",
-  height: "1rem",
-  color: "white",
-  display: "flex",
-  justifyContent: "center",
-  marginLeft: "3rem"
+  position:"absolute", 
+   bottom:"0",
+   width:"100%",
+   height:"60px", 
+   paddingLeft: "5rem",  /* Height of the footer */
 };
 
 const Header = () => (
@@ -55,7 +51,7 @@ const Layout = () => {
   return (
     <>
       {" "}
-      <Header /> <Footer />
+      <Header /> 
     </>
   );
 };

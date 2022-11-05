@@ -1,4 +1,4 @@
-import abi from '../utils/BuyMeACoffee.json';
+import abi from '../utils/SendEth.json';
 import { ethers } from "ethers";
 import Head from 'next/head'
 import Layout from "../components/Layout"
@@ -226,16 +226,21 @@ export default function Home() {
           )}
       </main>
 
-      {currentAccount && (<h1>Memos received</h1>)}
+      {currentAccount && (<h1>Memos</h1>)}
 
-      {currentAccount && (memos.map((memo, idx) => {
+      <div style={{"display":"flex", "flexDirection": "row", "width":"100%", "paddingTop":"2rem", "paddingLeft": "1rem",}}>
+      {currentAccount && 
+      (memos.map((memo, idx) => {
         return (
-          <div key={idx} style={{ border: "2px solid", "borderRadius": "5px", padding: "5px", margin: "5px" }}>
-            <p style={{ "fontWeight": "bold" }}>"{memo.message}"</p>
-            <p>From: {memo.name} at {memo.timestamp.toString()}</p>
+          <div key={idx} style={{"width": "10rem","backgroundColor": "black", "borderRadius": "5px", padding: "5px", margin: "5px" }}>
+            <p style={{ "fontWeight": "bold", "color": "white" }}>"{memo.message}"</p>
+            <p  style={{ "fontWeight": "bold", "color": "white" }}>From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
-      }))}
+
+      }))
+      }
+      </div>
     </div>
   )
 }
