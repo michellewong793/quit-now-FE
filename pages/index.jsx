@@ -7,7 +7,6 @@ import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
 import 'animate.css';
 
-
 export default function Home() {
   // Contract Address & ABI
   const contractAddress = "0x898221a7eeC77A5F0102CBfa74969615e69f52cc";
@@ -232,10 +231,13 @@ export default function Home() {
             </form>
           </div>
         ) : (
+          <>
           <div className={styles.flexRow}>
             <div className={styles.flexColumn}> 
             <p className={styles.tinyHeading}> help Sunwoo quit </p>
+
             <button onClick={connectWallet} className={styles.button}> Connect Wallet </button>
+            <button onClick={connectWallet} className={styles.button}> Subscribe</button>
             </div>
             
             <div className={styles.flexColumn}> 
@@ -243,6 +245,14 @@ export default function Home() {
             <button onClick={connectWallet} className={styles.button}> Spill The Tea </button>
             </div>
           </div>
+
+          <div className={styles.technologiesRow}>
+                      <p>Powered by <span className={styles.pinkTextColor}>Polygon</span> Mumbai, <span className={styles.pinkTextColor}>Push</span> Protocol, and <span className={styles.pinkTextColor}> Mina</span> Protocol, 
+                        <p>Identity Verified by  <span className={styles.pinkTextColor}>Zero Knowledge Proofs</span> by Mina Protocol</p>
+                        <p>Identity Verified by <span className={styles.pinkTextColor}>Biometric Iris Scans</span>  by World Coin</p></p>
+
+          </div>
+        </>
           )}
       </div>
       </div>

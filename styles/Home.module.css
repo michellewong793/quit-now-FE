@@ -29,7 +29,7 @@
   position: absolute;
   top: 15rem;
   width: 900px;
-  height:600px;
+  height:950px;
   background-color: #FFF3C8;
   border-radius: 97px;
   padding: 4rem;
@@ -128,11 +128,12 @@
 .button {
   background-color: #d017cd;
   border-radius: 9px;
-  width: fit-content;
   padding: 1rem;
   border: none;
   color: white;
   font-family: Alata;
+  margin: 1rem;
+  width:10rem;
 }
 
 .button:hover{
@@ -148,10 +149,25 @@
 
 }
 
+.technologiesRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  position: absolute;
+  bottom: 5rem;
+  font-size:1.5rem;
+}
+
 .flexColumn {
   display: flex;
   flex-direction: column;
   margin: 1rem;
+}
+
+.pinkTextColor {
+  color: #d017cd;
 }
 
 .tinyHeading {
