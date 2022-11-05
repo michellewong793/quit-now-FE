@@ -6,17 +6,38 @@ import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
 import 'animate.css';
+import 'pushnotifs.js';
+import * as PushAPI from "@pushprotocol/restapi";
+
 
 export default function Home() {
   // Contract Address & ABI
   const contractAddress = "0x898221a7eeC77A5F0102CBfa74969615e69f52cc";
   const contractABI = abi.abi;
+  const ethers = require('ethers');
+  const Pkey = '4c72314825ac811d6362cae345c63f013f3641b0bb45047852c8405e1e4f82d9';
+  const signer = new ethers.Wallet(Pkey);
 
   // Component state
   const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState([]);
+
+  const subscribeToChannel = PushAPI.channels.subscribe({
+    signer: signer,
+    channelAddress: 'eip155:5:0xf536E988c04565C5309Efb02bc0ff7757e9C2512', // channel address in CAIP
+    userAddress: 'eip155:5:0xf536E988c04565C5309Efb02bc0ff7757e9C2512', // user address in CAIP
+    onSuccess: () => {
+     console.log('opt in success');
+     sendWelcomeNotification();
+     dailyMessageNotification();
+    },
+    onError: () => {
+      console.error('opt in error');
+    },
+    env: 'staging'
+  })    
 
   const onNameChange = (event) => {
     setName(event.target.value);
@@ -237,7 +258,7 @@ export default function Home() {
             <p className={styles.tinyHeading}> help Sunwoo quit </p>
 
             <button onClick={connectWallet} className={styles.button}> Connect Wallet </button>
-            <button onClick={connectWallet} className={styles.button}> Subscribe</button>
+            <button onClick={() => subscribeToChannel} className={styles.button}> Subscribe</button>
             </div>
             
             <div className={styles.flexColumn}> 
