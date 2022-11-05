@@ -211,7 +211,7 @@ export default function Home() {
 
         {currentAccount ? (
           <div>
-            <form>
+            <form className={styles.form}>
               <div>
                 <label>
                   Name
@@ -219,9 +219,10 @@ export default function Home() {
                 <br />
 
                 <input
+                className={styles.input}
                   id="name"
                   type="text"
-                  placeholder="anon"
+                  placeholder="Miche Wong"
                   onChange={onNameChange}
                 />
               </div>
@@ -233,6 +234,7 @@ export default function Home() {
                 <br />
 
                 <textarea
+                 className={styles.input}
                   rows={3}
                   placeholder="Take care!"
                   id="message"
@@ -241,14 +243,32 @@ export default function Home() {
                 >
                 </textarea>
               </div>
-              <div>
+              
                 <button
                   type="button"
                   onClick={buyCoffee}
+                  className={styles.sendEthButton}
                 >
-                  Send 0.001ETH
+                  Gift 0.001 ETH
                 </button>
-              </div>
+
+                {currentAccount && (<h1>Everyone Who Loves Sunwoo &#128525;</h1>)}
+
+                <div style={{"display":"flex", "flexDirection": "row", "width":"100%"}}>
+    
+      {currentAccount && 
+      (memos.map((memo, idx) => {
+        return (
+          <div key={idx} style={{"width": "10rem","backgroundColor": "black", "borderRadius": "5px", padding: "5px", margin: "5px" }}>
+            <p style={{ "fontWeight": "bold", "color": "white" }}>"{memo.message}"</p>
+            <p  style={{ "fontWeight": "bold", "color": "white" }}>From: {memo.name} at {memo.timestamp.toString()}</p>
+          </div>
+        )
+
+      }))
+      }
+      </div>
+              
             </form>
           </div>
         ) : (
@@ -278,21 +298,8 @@ export default function Home() {
       </div>
       </div>
 
-      {currentAccount && (<h1>Memos</h1>)}
 
-      <div style={{"display":"flex", "flexDirection": "row", "width":"100%", "paddingTop":"2rem", "paddingLeft": "1rem",}}>
-      {currentAccount && 
-      (memos.map((memo, idx) => {
-        return (
-          <div key={idx} style={{"width": "10rem","backgroundColor": "black", "borderRadius": "5px", padding: "5px", margin: "5px" }}>
-            <p style={{ "fontWeight": "bold", "color": "white" }}>"{memo.message}"</p>
-            <p  style={{ "fontWeight": "bold", "color": "white" }}>From: {memo.name} at {memo.timestamp.toString()}</p>
-          </div>
-        )
-
-      }))
-      }
-      </div>
+      
     </div>
   )
 }
