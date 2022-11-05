@@ -1,6 +1,7 @@
 import abi from '../utils/BuyMeACoffee.json';
 import { ethers } from "ethers";
 import Head from 'next/head'
+import Layout from "../components/Layout"
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
 import styles from '../styles/Home.module.css'
@@ -173,8 +174,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Layout />
         <h1 className={styles.title}>
-          Just got laid off, looking for support!
+          quit now
         </h1>
 
         {currentAccount ? (
