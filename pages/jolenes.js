@@ -28,7 +28,7 @@ export default function Jolenes() {
 
    //Triangle Implementation for create Wallet
 
-   const triangle = new Triangle("secret_swTjveWfpC0bmp0PmCoOOGOCwdbQWvmez6cstX9lk");
+   const triangle = new Triangle(process.env.TRIANGLE_API_KEY);
    const createWallet = async () => {
      try {
          const wallet = await triangle.wallets.create({
