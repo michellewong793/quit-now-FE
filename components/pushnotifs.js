@@ -19,6 +19,7 @@
 //     env: 'staging'
 //   });
 
+const sendNotification = (() => _)
 //   //Send out daily Thank you to all the subscribers
 //   const dailyMessageNotification = await PushAPI.payloads.sendNotification({
 //     signer,
@@ -38,3 +39,4 @@
 //     channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
 //     env: 'staging'
 //   });
+export default sendNotification;
