@@ -43,7 +43,7 @@ const Header = () => (
       <a style={linkStyle}>About</a>
     </Link>
     <Link href="/jolenes">
-      <a style={linkStyle}>Jolene's Story</a>
+      <a style={linkStyle}>Jolene Kiyoko Story</a>
     </Link>
     <Link href="https://tally.so/r/me5rqO">
       <a style={linkStyle}>Earn</a>

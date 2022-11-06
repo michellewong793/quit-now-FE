@@ -8,6 +8,8 @@ import styles from '../styles/Home.module.css'
 import 'animate.css';
 import '../components/pushnotifs.js';
 import * as PushAPI from "@pushprotocol/restapi";
+import Avatar from "../components/Avatar";
+import Triangle from "triangle";
 
 
 export default function Jolenes() {
@@ -24,6 +26,24 @@ export default function Jolenes() {
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState([]);
 
+   //Triangle Implementation for create Wallet
+
+   const triangle = new Triangle("secret_swTjveWfpC0bmp0PmCoOOGOCwdbQWvmez6cstX9lk");
+   const createWallet = async () => {
+     try {
+         const wallet = await triangle.wallets.create({
+           name: "My Ethereum Wallet",
+           network: "ethereum_goerli",
+           vault: "vlt_01844a9e61a6705093a332c5542458a0",
+         })
+         setWallet(wallet.address)
+     }
+      catch (error) {
+   console.log(error);
+ }
+   }
+
+   
   const subscribeToChannel = PushAPI.channels.subscribe({
     signer: signer,
     channelAddress: 'eip155:5:0xf536E988c04565C5309Efb02bc0ff7757e9C2512', // channel address in CAIP
@@ -205,7 +225,6 @@ export default function Jolenes() {
 
         {currentAccount ? (
           <div>
-            <h1> Jolene's Story </h1>
             <h3>I tried not to let my fear get in the way, but the news hit me like a sledge hammer. Yesterday, at 10:00am, I was laid off, apparently because of recession fears. I was told I would lose access to my work accounts within minutes; they emailed my severance package to my personal email.
 
 Any thoughts/advice? I am an English major/editor - not a finance person. Thanks! Would also appreciate any Ethereum, words of support, or cash. 
@@ -254,6 +273,7 @@ Subscribe below for notifications on my progress.
                   Gift 0.001 ETH
                 </button>
 
+
                 {currentAccount && (<h1>Everyone Who Loves Jolene &#128525;</h1>)}
 
                 <div style={{"display":"flex", "flexDirection": "row", "width":"100%", "flex-wrap": "wrap"}}>
@@ -275,8 +295,10 @@ Subscribe below for notifications on my progress.
         ) : (
           <>
           <div className={styles.flexRow}>
-            <div className={styles.flexColumn}> 
-            <h1> Jolene's Story </h1>
+            <div className={styles.jolenesColumn}> 
+            <h1> Jolene Kiyoko Story </h1>           
+             <Avatar />
+
             <h3>I tried not to let my fear get in the way, but the news hit me like a sledge hammer. Yesterday, at 10:00am, I was laid off, apparently because of recession fears. I was told I would lose access to my work accounts within minutes; they emailed my severance package to my personal email.
 
 Any thoughts/advice? I am an English major/editor - not a finance person. Thanks! Would also appreciate any Ethereum, words of support, or cash. 
@@ -300,9 +322,10 @@ Subscribe below for notifications on my progress.
           </div>
 
           <div className={styles.technologiesRow}>
-                      <p>Powered by <span className={styles.pinkTextColor}>Polygon</span> Mumbai, <span className={styles.pinkTextColor}>Push</span> Protocol, and <span className={styles.pinkTextColor}> Mina</span> Protocol, 
-                        <p>Identity Verified by  <span className={styles.pinkTextColor}>Zero Knowledge Proofs</span> by Mina Protocol</p>
-                        <p>Identity Verified by <span className={styles.pinkTextColor}>Biometric Iris Scans</span>  by World Coin</p></p>
+                      <p>Powered by <span className={styles.pinkTextColor}>Polygon</span> Mumbai, <span className={styles.pinkTextColor}>Push</span> Protocol
+                      <p><span className={styles.pinkTextColor}>Wallet Infrastructure</span>  by Triangle</p>
+                      <p>Identity Verified by  <span className={styles.pinkTextColor}>Zero Knowledge Proofs</span> by Mina Protocol</p>
+                      <p>Identity Verified by <span className={styles.pinkTextColor}>Biometric Iris Scans</span>  by World Coin</p></p>
 
           </div>
         </>

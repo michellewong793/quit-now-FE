@@ -175,6 +175,13 @@
   margin: 1rem;
 }
 
+.jolenesColumn {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: baseline;
+}
+
 .pinkTextColor {
   color: #d017cd;
 }
