@@ -8,7 +8,8 @@ import styles from '../styles/Home.module.css'
 import 'animate.css';
 import '../components/pushnotifs.js';
 import * as PushAPI from "@pushprotocol/restapi";
-import Avatar from "../components/Avatar"
+import Avatar from "../components/Avatar";
+import Triangle from "triangle";
 
 
 export default function Jolenes() {
@@ -25,6 +26,24 @@ export default function Jolenes() {
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState([]);
 
+   //Triangle Implementation for create Wallet
+
+   const triangle = new Triangle("secret_swTjveWfpC0bmp0PmCoOOGOCwdbQWvmez6cstX9lk");
+   const createWallet = async () => {
+     try {
+         const wallet = await triangle.wallets.create({
+           name: "My Ethereum Wallet",
+           network: "ethereum_goerli",
+           vault: "vlt_01844a9e61a6705093a332c5542458a0",
+         })
+         setWallet(wallet.address)
+     }
+      catch (error) {
+   console.log(error);
+ }
+   }
+
+   
   const subscribeToChannel = PushAPI.channels.subscribe({
     signer: signer,
     channelAddress: 'eip155:5:0xf536E988c04565C5309Efb02bc0ff7757e9C2512', // channel address in CAIP
@@ -253,6 +272,7 @@ Subscribe below for notifications on my progress.
                 >
                   Gift 0.001 ETH
                 </button>
+
 
                 {currentAccount && (<h1>Everyone Who Loves Jolene &#128525;</h1>)}
 
