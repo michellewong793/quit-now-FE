@@ -8,6 +8,10 @@ import styles from '../styles/Home.module.css'
 import 'animate.css';
 import '../components/pushnotifs.js';
 import * as PushAPI from "@pushprotocol/restapi";
+import Triangle from "triangle";
+import Avatar from "../components/Avatar"
+
+
 
 
 export default function Home() {
@@ -21,8 +25,28 @@ export default function Home() {
   // Component state
   const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
+  const [wallet, setWallet] = useState("");
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState([]);
+
+  //Triangle Implementation for create Wallet
+
+  const triangle = new Triangle("secret_swTjveWfpC0bmp0PmCoOOGOCwdbQWvmez6cstX9lk");
+  const createWallet = async () => {
+    try {
+        const wallet = await triangle.wallets.create({
+          name: "My Ethereum Wallet",
+          network: "ethereum_goerli",
+          vault: "vlt_01844a9e61a6705093a332c5542458a0",
+        })
+        setWallet(wallet.address)
+    }
+     catch (error) {
+  console.log(error);
+}
+  }
+
+
 
   const subscribeToChannel = PushAPI.channels.subscribe({
     signer: signer,
@@ -252,6 +276,7 @@ export default function Home() {
                   Gift 0.001 ETH
                 </button>
 
+
                 {currentAccount && (<h1>Everyone Who Loves Sunwoo &#128525;</h1>)}
 
                 <div style={{"display":"flex", "flexDirection": "row", "width":"100%"}}>
@@ -276,7 +301,11 @@ export default function Home() {
             <div className={styles.flexColumn}> 
             <p className={styles.tinyHeading}> help Sunwoo quit </p>
 
+
             <button onClick={connectWallet} className={styles.button}> Connect Wallet </button>
+            <button onClick={createWallet} className={styles.button}> Create Wallet </button>
+
+
             <button onClick={() => subscribeToChannel} className={styles.button}> Subscribe</button>
             </div>
             
@@ -289,9 +318,13 @@ export default function Home() {
             </div>
           </div>
 
+          {wallet ? 
+            <p> Your New Wallet Address is {wallet}</p> : <> </> }
+
           <div className={styles.technologiesRow}>
-                      <p>Powered by <span className={styles.pinkTextColor}>Polygon</span> Mumbai, <span className={styles.pinkTextColor}>Push</span> Protocol, and <span className={styles.pinkTextColor}> Mina</span> Protocol, 
+                      <p>Powered by <span className={styles.pinkTextColor}>Polygon</span> Mumbai, <span className={styles.pinkTextColor}>Push</span> Protocol
                         <p>Identity Verified by  <span className={styles.pinkTextColor}>Zero Knowledge Proofs</span> by Mina Protocol</p>
+                        <p><span className={styles.pinkTextColor}>Wallet Infrastructure</span>  by Triangle</p>
                         <p>Identity Verified by <span className={styles.pinkTextColor}>Biometric Iris Scans</span>  by World Coin</p></p>
 
           </div>
