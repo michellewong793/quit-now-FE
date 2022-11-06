@@ -8,9 +8,10 @@ import styles from '../styles/Home.module.css'
 import 'animate.css';
 import './pushnotifs.js';
 import * as PushAPI from "@pushprotocol/restapi";
+import Triangle from "triangle";
 
 
-export default function Home() {
+export default async function Home() {
   // Contract Address & ABI
   const contractAddress = "0x898221a7eeC77A5F0102CBfa74969615e69f52cc";
   const contractABI = abi.abi;
@@ -23,6 +24,15 @@ export default function Home() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [memos, setMemos] = useState([]);
+
+  // Triangle TODO: Need API Key
+  const triangle = new Triangle("secret_abc123");
+  const wallet = await triangle.wallets.create({
+    name: "My Ethereum Wallet",
+    network: "ethereum_goerli",
+    vault: "vlt_abc123",
+  });
+
 
   const subscribeToChannel = PushAPI.channels.subscribe({
     signer: signer,
