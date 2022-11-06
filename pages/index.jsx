@@ -14,7 +14,7 @@ import Avatar from "../components/Avatar"
 
 
 
-export default function Home() {
+export default async function Home() {
   // Contract Address & ABI
   const contractAddress = "0x898221a7eeC77A5F0102CBfa74969615e69f52cc";
   const contractABI = abi.abi;
