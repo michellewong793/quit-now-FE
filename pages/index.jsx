@@ -260,7 +260,7 @@ export default function Home() {
       (memos.map((memo, idx) => {
         return (
           <div key={idx} style={{"width": "10rem","backgroundColor": "black", "borderRadius": "5px", padding: "1rem", margin: "5px" }}>
-            <p style={{ "fontWeight": "bold", "color": "white" }}>"{memo.message}"</p>
+            <p style={{ "fontWeight": "bold", "color": "white" }}>{memo.message}</p>
             <p  style={{ "fontWeight": "bold", "color": "white" }}>From: {memo.name} at {memo.timestamp.toString()}</p>
           </div>
         )
