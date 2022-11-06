@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const linkStyle = {
-  marginRight: 15,
+  marginRight: 35,
   fontFamily: "Baloo Bhai",
   textDecoration: "none",
   color: "white",
