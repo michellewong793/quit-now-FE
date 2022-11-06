@@ -253,6 +253,8 @@ Subscribe below for notifications on my progress.
                 >
                   Gift 0.001 ETH
                 </button>
+                <p> Disclaimer: Your transaction may take a few minutes to be confirmed by the network.</p>
+
 
                 {currentAccount && (<h1>Everyone Who Loves Jolene &#128525;</h1>)}
 

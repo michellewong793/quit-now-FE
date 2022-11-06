@@ -22,6 +22,7 @@ export default function Home() {
   const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+
   const [memos, setMemos] = useState([]);
 
   const subscribeToChannel = PushAPI.channels.subscribe({
@@ -108,9 +109,8 @@ export default function Home() {
 
         console.log("mined ", coffeeTxn.hash);
 
-        console.log("coffee purchased!");
-
-        // Clear the form fields.
+        console.log("ethereum sent to your friend!");
+          
         setName("");
         setMessage("");
       }
@@ -251,6 +251,7 @@ export default function Home() {
                 >
                   Gift 0.001 ETH
                 </button>
+                <p> Disclaimer: Your transaction may take a few minutes to be confirmed by the network.</p>
 
                 {currentAccount && (<h1>Everyone Who Loves Sunwoo &#128525;</h1>)}
 
