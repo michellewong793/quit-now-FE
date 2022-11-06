@@ -276,7 +276,7 @@ Subscribe below for notifications on my progress.
           <>
           <div className={styles.flexRow}>
             <div className={styles.jolenesColumn}> 
-            <h1> Jolene's Story </h1>           
+            <h1> Jolene Kiyoko Story </h1>           
              <Avatar />
 
             <h3>I tried not to let my fear get in the way, but the news hit me like a sledge hammer. Yesterday, at 10:00am, I was laid off, apparently because of recession fears. I was told I would lose access to my work accounts within minutes; they emailed my severance package to my personal email.
